@@ -1,0 +1,33 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+// Internal Imports
+import { Component } from '../component';
+import * as Configuration from '../../configuration';
+var Spacer = /** @class */ (function (_super) {
+    __extends(Spacer, _super);
+    function Spacer() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.type = 'spacer';
+        return _this;
+    }
+    Spacer.prototype.render = function () {
+        this.getComponentContainer()
+            .style('width', (this.configs.size || Configuration.spacers.default.size) + "px")
+            .style('height', (this.configs.size || Configuration.spacers.default.size) + "px")
+            .attr('opacity', 0);
+    };
+    return Spacer;
+}(Component));
+export { Spacer };
+//# sourceMappingURL=../../../src/components/layout/spacer.js.map
